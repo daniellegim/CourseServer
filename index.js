@@ -3,7 +3,8 @@ const app = express()
 const mongoose = require('mongoose')
 require('dotenv').config()
 
-mongoose.connect(process.env.DATABASE_URL, {useNewUrlParser: true})
+mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true,
+                                             useUnifiedTopology: true})
 
 const db = mongoose.connection
 db.on('error', (error) => console.error(error))
@@ -14,4 +15,4 @@ app.use(express.json())
 const coursesRouter = require('./routes/courses')
 app.use('/courses', coursesRouter)
 
-app.listen(3000, () => console.log('Server started'))
+app.listen(5000, () => console.log('Server started'))

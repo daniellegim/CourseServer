@@ -1,3 +1,18 @@
-GET http://localhost:3000/courses
+GET http://localhost:5000/courses
 
 ###
+POST http://localhost:5000/courses
+Content-Type: application/json
+
+{
+    "name": "bla",
+    "dates": ["2020-12-01T22:00:00.000+00:00"]
+}
+
+###
+PATCH http://localhost:5000/courses/5fbf7d0e6199a41658805954
+Content-Type: application/json
+
+{
+    "dates": ["2020-12-22T22:00:00.000+00:00"]
+}
