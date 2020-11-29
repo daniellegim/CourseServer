@@ -30,10 +30,10 @@ router.get('/', async (req, res) => {
 // Create new course
 router.post('/', async (req, res) => {
     const course = new Courses({
-        name: req.body.name,
+        name: req.body.newCourse.name,
         gmush: "50",
-        description: req.body.name,
-        dates: req.body.dates
+        description: req.body.newCourse.name,
+        dates: req.body.newCourse.dates
     })
     try {
         const newCourse = await course.save()

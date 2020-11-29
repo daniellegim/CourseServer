@@ -16,6 +16,6 @@ const coursesSchema = new mongoose.Schema({
     dates: [{
         type: Date
     }]
-})
+}, {collection: "courses"})
 
 module.exports = mongoose.model('Courses', coursesSchema)
