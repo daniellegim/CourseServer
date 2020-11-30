@@ -13,6 +13,9 @@ db.once('open', () => console.log('Connected to Database'))
 app.use(express.json())
 
 const coursesRouter = require('./routes/courses')
+const profileRouter = require('./routes/profile')
+
 app.use('/courses', coursesRouter)
+app.use('/profile', profileRouter)
 
 app.listen(5000, () => console.log('Server started'))

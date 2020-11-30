@@ -45,7 +45,7 @@ router.post('/', async (req, res) => {
 
 // Update course(add date)
 router.patch('/:id', getCourse, async (req, res) => {
-    res.course.dates.push(req.body.dates)
+    res.course.dates.push(req.body.newDate)
     try {
         const updatedCourse = await res.course.save()
         res.json(updatedCourse)
