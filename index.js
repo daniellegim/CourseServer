@@ -14,8 +14,10 @@ app.use(express.json())
 
 const coursesRouter = require('./routes/courses')
 const profileRouter = require('./routes/profile')
+const soldierCoursesRouter = require('./routes/soldierCourses')
 
 app.use('/courses', coursesRouter)
 app.use('/profile', profileRouter)
+app.use('/soldierCourses', soldierCoursesRouter)
 
 app.listen(5000, () => console.log('Server started'))

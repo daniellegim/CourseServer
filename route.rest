@@ -20,3 +20,6 @@ Content-Type: application/json
 ###
 GET http://localhost:5000/profile/8670224
 //5fc4df9304fab9079397962f
+
+###
+GET http://localhost:5000/soldierCourses/8456304
