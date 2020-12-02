@@ -21,4 +21,19 @@ router.get('/:id', async (req, res) => {
     }
 })
 
+// Add course for soldier
+router.post('/', async (req, res) => {
+    const course = new SoldierCourses({
+        pernum: req.body.newCourse.pernum,
+        courseId: req.body.newCourse.courseId,
+        date: req.body.newCourse.date
+    })
+    try {
+        const newCourse = await course.save()
+        res.status(201).json(newCourse)
+    } catch (err) {
+        res.status(400).json({ message: err.message })
+    }
+})
+
 module.exports = router

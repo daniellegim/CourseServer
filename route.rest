@@ -23,3 +23,13 @@ GET http://localhost:5000/profile/8670224
 
 ###
 GET http://localhost:5000/soldierCourses/8456304
+
+###
+POST http://localhost:5000/soldierCourses
+Content-Type: application/json
+
+{
+    "pernum": "8670224",
+    "courseId": "5f4f829891484226cdbc57d4",
+    "date": "2021-09-13T21:00:00.000+00:00"
+}
