@@ -5,7 +5,7 @@ const Profile = require('../models/profile')
 async function getUser(req, res, next) {
     let user
     try {
-        user = await Profile.findOne({persnumber: req.params.id})
+        user = await Profile.findOne({pernum: req.params.id})
         if (user == null) {
             return res.status(404).json({ message: 'Cannot find user' })
         }
