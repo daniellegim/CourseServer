@@ -5,6 +5,10 @@ const profileSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    pernum: {
+        type: String,
+        required: true
+    },
     birthday: {
         type: Date,
         required: true
