@@ -22,4 +22,21 @@ router.get('/:id', getUser, async (req, res) => {
     res.json(res.user)
 })
 
+// Add new user
+router.post('/', async (req, res) => {
+    const user = new Profile({
+        name: req.body.newUser.name,
+        pernum: req.body.newUser.pernum,
+        birthday: req.body.newUser.birthday,
+        rank: req.body.newUser.rank,
+        quote: req.body.newUser.quote
+    })
+    try {
+        const newUser = await user.save()
+        res.status(201).json(newUser)
+    } catch (err) {
+        res.status(400).json({ message: err.message })
+    }
+})
+
 module.exports = router

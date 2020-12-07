@@ -33,3 +33,15 @@ Content-Type: application/json
     "courseId": "5f4f829891484226cdbc57d4",
     "date": "2021-09-13T21:00:00.000+00:00"
 }
+
+###
+POST http://localhost:5000/profile
+Content-Type: application/json
+
+{
+    "name": "Roy",
+    "pernum": "8677696",
+    "birthday": "2000-02-21",
+    "rank": "סמל",
+    "quote": "ima"
+}
