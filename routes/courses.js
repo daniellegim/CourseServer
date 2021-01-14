@@ -2,6 +2,14 @@ const express = require('express')
 const router = express.Router()
 const Courses = require('../models/courses')
 
+// const appInsights = require('applicationinsights')
+// const client = appInsights.defaultClient
+
+// client.trackException({
+//             exception: new Error("get Building By BaseId" + err)
+//           });
+
+
 async function getCourse(req, res, next) {
     let course
     try {
