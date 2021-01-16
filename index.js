@@ -5,6 +5,7 @@ require('dotenv').config()
 
 const appInsights = require('applicationinsights')
 appInsights.setup(process.env.APPINSIGHTS_KEY).start()
+// .setAutoDependencyCorrelation(true)
 
 mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true,
                                              useUnifiedTopology: true})

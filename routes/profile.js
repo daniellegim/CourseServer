@@ -2,11 +2,17 @@ const express = require('express')
 const router = express.Router()
 const Profile = require('../models/profile')
 
+const appInsights = require('applicationinsights')
+let client = appInsights.defaultClient
+
 async function getUser(req, res, next) {
     let user
     try {
         user = await Profile.findOne({pernum: req.params.id})
         if (user == null) {
+            client.trackException({
+                exception: new Error("Can't find user")
+            })
             return res.status(404).json({ message: 'Cannot find user' })
         }
     } catch(err) {
