@@ -10,12 +10,20 @@ async function getUser(req, res, next) {
     try {
         user = await Profile.findOne({pernum: req.params.id})
         if (user == null) {
-            client.trackException({
-                exception: new Error("Can't find user")
-            })
+            client.trackTrace({message: "User " + req.params.id + " not found"})
+            // client.trackEvent({
+            //     name: "User not found", 
+            //     properties: {user: req.params.id}
+            // })
+            // client.trackException({
+            //     exception: new Error("Can't find user")
+            // })
             return res.status(404).json({ message: 'Cannot find user' })
         }
     } catch(err) {
+        client.trackException({
+            exception: new Error("Can't search user")
+        })
         res.status(500).json({ message: err.message })
     }
 
